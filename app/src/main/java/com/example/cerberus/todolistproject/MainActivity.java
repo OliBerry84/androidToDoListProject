@@ -36,4 +36,5 @@ public class MainActivity extends AppCompatActivity {
         else
             Toast.makeText(MainActivity.this,"Job NOT Added", Toast.LENGTH_LONG).show();
     }
+
 }
