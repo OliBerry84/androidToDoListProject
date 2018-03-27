@@ -3,4 +3,6 @@
     <string name="addJob">Insert job here...</string>
     <string name="jobDescription">Job Desc...</string>
     <string name="addJobBtn">Add to List</string>
+    <string name="menu">menu</string>
+    <string name="addJobPage">Add a Job</string>
 </resources>

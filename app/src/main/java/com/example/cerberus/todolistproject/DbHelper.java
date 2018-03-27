@@ -47,4 +47,30 @@ public class DbHelper extends SQLiteOpenHelper {
             return true;
     }
 
+//    public Cursor getAllJobs(){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor result = db.rawQuery("select * from "+ TABLE_NAME , null);
+//        return result;
+//    }
+
+//    public Cursor getAllJobs(SQLiteDatabase db) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] projection = {
+                KEY_TITLE
+        };
+
+        String selection = KEY_TITLE + " = ?";
+        String[] selectionArgs = {"Job Title"};
+        String sortOrder = KEY_TITLE + " DESC";
+
+        Cursor cursor = db.query(
+                TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                sortOrder
+        );
+
 }
