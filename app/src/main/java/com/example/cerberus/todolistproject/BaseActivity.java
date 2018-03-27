@@ -6,11 +6,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-/**
- * Created by cerberus on 27/03/2018.
- */
-
-public abstract class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -19,8 +15,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         return true;
     }
 
-    public void onAddMenuClick(MenuItem menu){
-        Intent intent = new Intent(this, JobActivity.class);
+    public void onAddJobClick(MenuItem menu){
+        Intent intent = new Intent(this, AddJobActivity.class);
         startActivity(intent);
     }
 }

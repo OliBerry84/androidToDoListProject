@@ -3,9 +3,10 @@ package com.example.cerberus.todolistproject;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 /**
  * Created by cerberus on 26/03/2018.
@@ -47,30 +48,25 @@ public class DbHelper extends SQLiteOpenHelper {
             return true;
     }
 
-//    public Cursor getAllJobs(){
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor result = db.rawQuery("select * from "+ TABLE_NAME , null);
-//        return result;
-//    }
+    public ArrayList<Job> allJobs(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Job> jobList = new ArrayList<>();
 
-//    public Cursor getAllJobs(SQLiteDatabase db) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String[] projection = {
-                KEY_TITLE
-        };
+        Cursor cursorJobs = db.rawQuery("Select * from " + TABLE_NAME, null);
 
-        String selection = KEY_TITLE + " = ?";
-        String[] selectionArgs = {"Job Title"};
-        String sortOrder = KEY_TITLE + " DESC";
+        if(cursorJobs.moveToFirst()){
+            do {
+                jobList.add(new Job(
+                        cursorJobs.getInt(0),
+                        cursorJobs.getString(1),
+                        cursorJobs.getString(2)
+                ));
+            } while (cursorJobs.moveToNext());
+        }
+        cursorJobs.close();
 
-        Cursor cursor = db.query(
-                TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                sortOrder
-        );
+        return jobList;
+    }
+
 
 }

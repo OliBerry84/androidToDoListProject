@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/actionMenu"
-        android:onClick="onAddMenuClick"
+        android:onClick="onAddJobClick"
         android:title="@string/addJobPage" />
 </menu>
