@@ -29,9 +29,10 @@ public class JobListAdapter extends ArrayAdapter<Job> {
         TextView jobTitle2 = listItemView.findViewById(R.id.jobTitle2);
         jobTitle2.setText((currentJob.getTitle().toString()));
 
-        listItemView.setTag(currentJob);
+        jobTitle2.setTag(currentJob);
 
         return listItemView;
     }
+
 }
 

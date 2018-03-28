@@ -68,5 +68,10 @@ public class DbHelper extends SQLiteOpenHelper {
         return jobList;
     }
 
+    Boolean deleteJob(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, KEY_ID + "=?", new String[] {String.valueOf(id)})>0;
+    }
+
 
 }

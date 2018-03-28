@@ -1,5 +1,6 @@
 package com.example.cerberus.todolistproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,6 +41,11 @@ public class AddJobActivity extends BaseActivity {
         else
             Toast.makeText(AddJobActivity.this, "Job NOT Added", Toast.LENGTH_SHORT).show();
 //        (jobTitle.length() != 0) (jobDescription.length() != 0)
+    }
+
+    public void onReturnButtonClick(View listItem) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

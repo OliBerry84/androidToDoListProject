@@ -4,22 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cerberus.todolistproject.JobActivity">
+    android:background="@android:color/transparent"
+    tools:context="com.example.cerberus.todolistproject.AddJobActivity">
 
     <TextView
         android:id="@+id/jobTitle2"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:onClick="onListItemClick"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="textview" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

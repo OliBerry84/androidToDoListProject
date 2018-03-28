@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddJobActivity"></activity>
+        <activity android:name=".AddJobActivity" />
+        <activity android:name=".DetailedDescription"></activity>
     </application>
 
 </manifest>
