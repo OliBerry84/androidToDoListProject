@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class DbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "todolist.db";
+    public static final String DATABASE_NAME = "todolist.db";
     public static final String TABLE_NAME = "todolist_table";
     public static final String KEY_ID = "ID";
     public static final String KEY_TITLE = "JobTitle";
@@ -49,10 +49,10 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Job> allJobs(){
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<Job> jobList = new ArrayList<>();
 
-        Cursor cursorJobs = db.rawQuery("Select * from " + TABLE_NAME, null);
+        Cursor cursorJobs = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
 
         if(cursorJobs.moveToFirst()){
             do {

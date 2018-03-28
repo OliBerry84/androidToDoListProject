@@ -28,11 +28,11 @@ public class AddJobActivity extends BaseActivity {
 
     public void onAddJobButtonClick(View clickedView) {
         Log.d("AddJobActivity", "AddJob button clicked");
-        boolean jobIsAdded = myDatabase.addJob(
+        boolean jobAdded = myDatabase.addJob(
                 jobTitle.getText().toString(),
                 jobDescription.getText().toString());
 
-        if (jobIsAdded == true) {
+        if (jobAdded == true) {
             Toast.makeText(AddJobActivity.this,"Job Added to List", Toast.LENGTH_SHORT).show();
             jobTitle.setText(null);
             jobDescription.setText(null);
@@ -41,4 +41,5 @@ public class AddJobActivity extends BaseActivity {
             Toast.makeText(AddJobActivity.this, "Job NOT Added", Toast.LENGTH_SHORT).show();
 //        (jobTitle.length() != 0) (jobDescription.length() != 0)
     }
+
 }
