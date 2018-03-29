@@ -18,7 +18,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_list);
 
-        completedBox = (CheckBox) findViewById(R.id.checkBoxMain);
+        completedBox = findViewById(R.id.checkBoxMain);
 
         DbHelper db = new DbHelper(this);
         ArrayList<Job> list = db.allJobs();
@@ -45,10 +45,7 @@ public class MainActivity extends BaseActivity {
 //    public void onCompletionCheckBox(){
 //        if(completedBox.isChecked()){
 //            Toast.makeText(MainActivity.this, "Job is Completed", Toast.LENGTH_SHORT).show();
-//        } else {
-//            Toast.makeText(MainActivity.this, "Job is still not done, lazy bastard!!", Toast.LENGTH_SHORT).show();
 //        }
-//
 //    }
 
     public void onListItemClick(View textViewThatWasSelected) {

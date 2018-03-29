@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DetailedDescription extends BaseActivity {
 
@@ -28,15 +29,29 @@ public class DetailedDescription extends BaseActivity {
         detailedJobDescription.setText((selectedJob.getDescription()));
     }
 
-//    @Override
-//    public void onDeleteButtonClick(View view) {
-//
-//        DbHelper myDatabase = new DbHelper(this);
-//
-//        String sql = "DELETE FROM todolist_table WHERE id = ?";
-//        myDatabase.deleteJob(, new Integer[]{selectedJob.getId()});
-//        onResume();
-//    }
+    public void onUpdateButtonClick(View view){
+        DbHelper myDatabase = new DbHelper(this);
+        String job = detailedJobTitle.getText().toString();
+        if (!job.equals("")) {
+            myDatabase.update(job, selectedJob.getId() , selectedJob.getTitle());
+            Toast.makeText(this, "Job updated", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Job not updated", Toast.LENGTH_SHORT).show();
+        }
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void onDeleteButtonClick(View view){
+        DbHelper myDatabase = new DbHelper(this);
+        myDatabase.delete(selectedJob.getId(), selectedJob.getTitle());
+        detailedJobTitle.setText("");
+        detailedJobDescription.setText("");
+        Toast.makeText(this, "Job has been deleted", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 
     public void onReturnButtonClick(View listItem) {
         Intent intent = new Intent(this, MainActivity.class);

@@ -68,10 +68,20 @@ public class DbHelper extends SQLiteOpenHelper {
         return jobList;
     }
 
-    Boolean deleteJob(String id){
+    public void update(String newJob, int id, String oldJob){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, KEY_ID + "=?", new String[] {String.valueOf(id)})>0;
+        String query = "UPDATE " + TABLE_NAME + " SET " + KEY_TITLE +
+                " = '" + newJob + "' WHERE " + KEY_ID + " = '" + id + "'" +
+                " AND " + KEY_TITLE + " = '" + oldJob + "'";
+        db.execSQL(query);
     }
 
+    public void delete(Integer id, String job){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
+                + KEY_ID + " = '" + id + "'" +
+                " AND " + KEY_TITLE + " = '" + job + "'";
+        db.execSQL(query);
+    }
 
 }
