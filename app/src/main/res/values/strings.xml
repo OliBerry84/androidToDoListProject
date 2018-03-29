@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDoListProject</string>
+    <string name="app_name">Non Fancy To-Do List</string>
     <string name="addJob">Insert job here...</string>
     <string name="jobDescription">Job Desc...</string>
     <string name="addJobBtn">Add to List</string>
@@ -8,4 +8,10 @@
     <string name="deleteButton">Delete Job</string>
     <string name="detailedListButton">Return to TaskList</string>
     <string name="buttonUpdate">Update Job</string>
+    <string name="joblistheader">Job List</string>
+    <string name="jobDescriptionAddJob">Job Description...</string>
+    <string name="jobDescAdd">Job description...</string>
+    <string name="addJobButton">Add to Tasklist</string>
+    <string name="deleteJobButton">Delete</string>
+    <string name="buttonUpdateList">Update</string>
 </resources>

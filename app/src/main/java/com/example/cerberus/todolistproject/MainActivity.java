@@ -11,14 +11,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
 
-    CheckBox completedBox;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_list);
-
-        completedBox = findViewById(R.id.checkBoxMain);
 
         DbHelper db = new DbHelper(this);
         ArrayList<Job> list = db.allJobs();
@@ -41,12 +37,6 @@ public class MainActivity extends BaseActivity {
         ListView listView = findViewById(R.id.jobList);
         listView.setAdapter(jobAdapter);
     }
-
-//    public void onCompletionCheckBox(){
-//        if(completedBox.isChecked()){
-//            Toast.makeText(MainActivity.this, "Job is Completed", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 
     public void onListItemClick(View textViewThatWasSelected) {
         Intent intent = new Intent(this, DetailedDescription.class);

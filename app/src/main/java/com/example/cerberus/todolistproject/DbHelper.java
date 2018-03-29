@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 
 public class DbHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "todolist.db";
     public static final String TABLE_NAME = "todolist_table";
     public static final String KEY_ID = "ID";

@@ -33,14 +33,13 @@ public class AddJobActivity extends BaseActivity {
                 jobTitle.getText().toString(),
                 jobDescription.getText().toString());
 
-        if (jobAdded == true) {
+        if (jobAdded == true && jobTitle.length() != 0) {
             Toast.makeText(AddJobActivity.this,"Job Added to List", Toast.LENGTH_SHORT).show();
             jobTitle.setText(null);
             jobDescription.setText(null);
         }
         else
             Toast.makeText(AddJobActivity.this, "Job NOT Added", Toast.LENGTH_SHORT).show();
-//        (jobTitle.length() != 0) (jobDescription.length() != 0)
     }
 
     public void onReturnButtonClick(View listItem) {
