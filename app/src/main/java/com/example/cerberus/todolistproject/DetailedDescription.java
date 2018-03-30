@@ -47,7 +47,7 @@ public class DetailedDescription extends BaseActivity {
         myDatabase.delete(selectedJob.getId(), selectedJob.getTitle());
         detailedJobTitle.setText("");
         detailedJobDescription.setText("");
-        Toast.makeText(this, "Job has been deleted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Job has been completed & deleted", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
